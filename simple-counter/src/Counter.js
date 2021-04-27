@@ -8,12 +8,15 @@ import "./css/App.css";
 
 const Counter = () => {
   
+  // start counting from "zero"
   const [counting, setCounting] = useState(0);
   
+  // adding one second each interval
   useEffect(() => {
       const interval = setInterval(() => {
-          setCounting(counting => counting + 1)
+          setCounting(counting => ++counting)
       }, 1000);
+      
       return () => clearInterval(interval);
   }, []);
 
